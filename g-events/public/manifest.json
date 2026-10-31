@@ -1,0 +1,25 @@
+{
+  "name": "G-Events",
+  "short_name": "G-Events",
+  "description": "Campus Activity Platform — Hackathon MVP",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#10B981",
+  "background_color": "#FAFBF7",
+  "orientation": "portrait",
+  "precomposed": true,
+
+  /* Icons - using the existing G-Events logo PNG */
+  "icons": [
+    {
+      "src": "G-Events logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "G-Events logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

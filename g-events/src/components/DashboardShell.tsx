@@ -72,8 +72,8 @@ export function DashboardShell({ role, title, children, showBackButton }: Dashbo
         alignItems: 'center',
         justifyContent: 'space-between',
         padding: '12px 16px',
-        borderBottom: '1px solid #ECEEF4',
-        background: 'white',
+        borderBottom: '1px solid var(--border)',
+        background: var(--card),
         position: 'sticky',
         top: 0,
         zIndex: 40,
@@ -89,8 +89,8 @@ export function DashboardShell({ role, title, children, showBackButton }: Dashbo
             </button>
           )}
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <Zap size={18} color="#3155F5" />
-            <span style={{ fontSize: 15, fontWeight: 700, color: '#17192D' }}>{title}</span>
+            <Zap size={18} color="var(--primary)" />
+            <span style={{ fontSize: 15, fontWeight: 700, color: var(--foreground) }}>{title}</span>
           </div>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -107,7 +107,7 @@ export function DashboardShell({ role, title, children, showBackButton }: Dashbo
       </div>
 
       {/* Content */}
-      <div className="page-content" style={{ paddingTop: 16 }}>
+      <div className="page-content" style={{ paddingTop: 16, paddingBottom: 16 }}>
         {children}
       </div>
 

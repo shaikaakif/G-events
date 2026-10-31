@@ -4,12 +4,6 @@ import React from 'react';
 import type { Ticket, TicketStatus } from '@/lib/types';
 import { Ticket as TicketIcon, Clock, User, ArrowRight } from 'lucide-react';
 
-interface TicketListProps {
-  tickets: Ticket[];
-  onTicketClick?: (ticketId: string) => void;
-  emptyMessage?: string;
-}
-
 const STATUS_CLASS_MAP: Record<TicketStatus, string> = {
   'Open': 'status-open',
   'Acknowledged': 'status-acknowledged',
@@ -47,7 +41,7 @@ export function TicketList({ tickets, onTicketClick, emptyMessage }: TicketListP
   if (tickets.length === 0) {
     return (
       <div className="empty-state">
-        <TicketIcon size={44} style={{ color: '#8E93AD', margin: '0 auto 12px', display: 'block' }} />
+        <TicketIcon size={44} style={{ color: '#9CA3AF', margin: '0 auto 12px', display: 'block' }} />
         <p>{emptyMessage || 'No tickets found'}</p>
       </div>
     );
@@ -91,8 +85,8 @@ export function TicketList({ tickets, onTicketClick, emptyMessage }: TicketListP
               <span style={{
                 fontSize: 11,
                 fontWeight: 600,
-                color: '#5A5F7A',
-                background: '#F0F2F7',
+                color: '#6B7280',
+                background: 'var(--surface-alt)',
                 padding: '2px 8px',
                 borderRadius: 6,
                 letterSpacing: 0.2,
@@ -114,7 +108,7 @@ export function TicketList({ tickets, onTicketClick, emptyMessage }: TicketListP
               <h3 style={{
                 fontSize: 15,
                 fontWeight: 600,
-                color: '#17192D',
+                color: '#141A16',
                 margin: 0,
                 lineHeight: 1.35,
               }}>
@@ -123,7 +117,7 @@ export function TicketList({ tickets, onTicketClick, emptyMessage }: TicketListP
               {isClickable && (
                 <ArrowRight
                   size={16}
-                  color="#8E93AD"
+                  color="#9CA3AF"
                   style={{ flexShrink: 0, marginTop: 2 }}
                 />
               )}
@@ -133,7 +127,7 @@ export function TicketList({ tickets, onTicketClick, emptyMessage }: TicketListP
             {ticket.description && (
               <p style={{
                 fontSize: 13,
-                color: '#5A5F7A',
+                color: '#6B7280',
                 lineHeight: 1.45,
                 margin: 0,
                 overflow: 'hidden',
@@ -155,15 +149,15 @@ export function TicketList({ tickets, onTicketClick, emptyMessage }: TicketListP
               gap: 8,
               marginTop: 4,
               paddingTop: 8,
-              borderTop: '1px solid #ECEEF4',
+              borderTop: '1px solid #A7F3A0',
               fontSize: 12,
-              color: '#8E93AD',
+              color: '#9CA3AF',
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
                 {ticket.creator_name && (
                   <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}>
                     <User size={13} />
-                    <span style={{ color: '#5A5F7A', fontWeight: 500 }}>{ticket.creator_name}</span>
+                    <span style={{ color: '#6B7280', fontWeight: 500 }}>{ticket.creator_name}</span>
                   </span>
                 )}
                 {ticket.creator_name && <span>·</span>}
@@ -174,8 +168,8 @@ export function TicketList({ tickets, onTicketClick, emptyMessage }: TicketListP
               </div>
 
               {ticket.assignee_name && (
-                <span style={{ fontSize: 11, color: '#5A5F7A', fontWeight: 500 }}>
-                  Assigned: <strong style={{ color: '#17192D' }}>{ticket.assignee_name}</strong>
+                <span style={{ fontSize: 11, color: '#6B7280', fontWeight: 500 }}>
+                  Assigned: <strong style={{ color: '#141A16' }}>{ticket.assignee_name}</strong>
                 </span>
               )}
             </div>

@@ -7,10 +7,10 @@ import { Zap, Users, ChevronRight, Eye, EyeOff } from 'lucide-react';
 type DemoRole = 'participant' | 'volunteer' | 'coordinator' | 'principal';
 
 const DEMO_ROLES: { role: DemoRole; label: string; desc: string; color: string }[] = [
-  { role: 'participant', label: 'Demo Participant', desc: 'Aarav Sharma — Student', color: '#3155F5' },
-  { role: 'volunteer', label: 'Demo Volunteer', desc: 'Priya Patel — Tech Support', color: '#A8E84A' },
-  { role: 'coordinator', label: 'Demo Activity Coordinator', desc: 'Rahul Verma — Event Ops', color: '#FFD447' },
-  { role: 'principal', label: 'Demo Principal', desc: 'Dr. Sunita Iyer — Administrator', color: '#8657E8' },
+  { role: 'participant', label: 'Demo Participant', desc: 'Aarav Sharma — Student', color: '#10B981' },
+  { role: 'volunteer', label: 'Demo Volunteer', desc: 'Priya Patel — Tech Support', color: '#D1FAE5' },
+  { role: 'coordinator', label: 'Demo Activity Coordinator', desc: 'Rahul Verma — Event Ops', color: '#B7DFA7' },
+  { role: 'principal', label: 'Demo Principal', desc: 'Dr. Sunita Iyer — Administrator', color: '#C4B5FD' },
 ];
 
 export default function SignInPage() {
@@ -54,32 +54,27 @@ export default function SignInPage() {
       alignItems: 'center',
       justifyContent: 'center',
       padding: '24px 20px',
-      background: '#FAFBFD',
+      background: 'var(--background)',
     }}>
       {/* Pixel accent bar */}
       <div className="pixel-border-top" style={{ width: '100%', maxWidth: 400, marginBottom: 0 }} />
 
       <div style={{
         width: '100%',
-        maxWidth: 400,
-        background: 'white',
+        maxMax: 400,
+        background: 'var(--card)',
         borderRadius: '0 0 16px 16px',
         padding: '32px 24px',
         boxShadow: '0 4px 24px rgba(0,0,0,0.06)',
       }}>
         {/* Logo / Brand */}
         <div style={{ textAlign: 'center', marginBottom: 28 }}>
-          <div style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: 10,
-            marginBottom: 8,
-          }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
             <div style={{
               width: 40,
               height: 40,
               borderRadius: 10,
-              background: 'linear-gradient(135deg, #3155F5, #8657E8)',
+              background: 'linear-gradient(135deg, var(--primary), var(--secondary))',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -89,7 +84,7 @@ export default function SignInPage() {
             <span style={{
               fontSize: 24,
               fontWeight: 800,
-              color: '#17192D',
+              color: var(--foreground),
               letterSpacing: '-0.5px',
             }}>
               G-Events
@@ -97,7 +92,7 @@ export default function SignInPage() {
           </div>
           <p style={{
             fontSize: 14,
-            color: '#5A5F7A',
+            color: var(--text-muted),
             margin: 0,
           }}>
             Your campus activities, all in one place.
@@ -112,7 +107,7 @@ export default function SignInPage() {
               <input
                 id="email"
                 type="email"
-                className="g-input"
+                className="g-input w-full"
                 placeholder="you@school.edu"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -126,7 +121,7 @@ export default function SignInPage() {
                 <input
                   id="password"
                   type={showPassword ? 'text' : 'password'}
-                  className="g-input"
+                  className="g-input w-full"
                   placeholder="Enter your password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
@@ -144,9 +139,11 @@ export default function SignInPage() {
                     background: 'none',
                     border: 'none',
                     cursor: 'pointer',
-                    color: '#8E93AD',
+                    color: 'var(--text-muted)',
                     padding: 0,
                     display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                   }}
                   aria-label={showPassword ? 'Hide password' : 'Show password'}
                 >
@@ -156,12 +153,12 @@ export default function SignInPage() {
             </div>
 
             <button
-              className="g-btn g-btn-primary g-btn-block g-btn-lg"
+              className="g-btn g-btn-primary g-btn-block g-btn-lg w-full"
               onClick={() => {
                 // Real auth would go here
                 alert('Real authentication requires Supabase configuration. Use demo credentials for now.');
               }}
-              style={{ marginBottom: 16 }}
+              style={{ marginBottom: 16, width: '100%' }}
             >
               Sign in
             </button>
@@ -172,17 +169,17 @@ export default function SignInPage() {
               gap: 12,
               margin: '16px 0',
             }}>
-              <div style={{ flex: 1, height: 1, background: '#E2E5EE' }} />
-              <span style={{ fontSize: 12, color: '#8E93AD', fontWeight: 500 }}>or</span>
-              <div style={{ flex: 1, height: 1, background: '#E2E5EE' }} />
+              <div style={{ flex: 1, height: 1, background: 'var(--border)' }} />
+              <span style={{ fontSize: 12, color: 'var(--text-muted)', fontWeight: 500 }}>or</span>
+              <div style={{ flex: 1, height: 1, background: 'var(--border)' }} />
             </div>
 
             <button
-              className="g-btn g-btn-outline g-btn-block"
+              className="g-btn g-btn-outline g-btn-block w-full"
               onClick={() => setShowDemo(true)}
-              style={{ marginBottom: 0 }}
+              style={{ marginBottom: 0, width: '100%' }}
             >
-              <Users size={18} />
+              <Users size={18} className="mr-2" />
               Continue with demo credentials
             </button>
           </>
@@ -195,14 +192,14 @@ export default function SignInPage() {
               <p style={{
                 fontSize: 14,
                 fontWeight: 600,
-                color: '#17192D',
+                color: var(--foreground),
                 marginBottom: 4,
               }}>
                 Select a demo role
               </p>
               <p style={{
                 fontSize: 13,
-                color: '#8E93AD',
+                color: 'var(--text-muted)',
                 margin: 0,
               }}>
                 Explore G-Events as any role — no credentials needed.
@@ -221,11 +218,12 @@ export default function SignInPage() {
                     gap: 12,
                     padding: '12px 14px',
                     borderRadius: 10,
-                    border: '1.5px solid #E2E5EE',
-                    background: loading === role ? '#F0F2F7' : 'white',
+                    border: '1.5px solid var(--border)',
+                    background: loading === role ? 'var(--surface-alt)' : 'var(--card)',
                     cursor: loading ? 'wait' : 'pointer',
                     textAlign: 'left',
                     transition: 'all 0.15s ease',
+                    marginBottom: 4,
                     width: '100%',
                   }}
                   onMouseEnter={(e) => {
@@ -236,8 +234,8 @@ export default function SignInPage() {
                   }}
                   onMouseLeave={(e) => {
                     if (!loading) {
-                      (e.currentTarget as HTMLButtonElement).style.borderColor = '#E2E5EE';
-                      (e.currentTarget as HTMLButtonElement).style.background = 'white';
+                      (e.currentTarget as HTMLButtonElement).style.borderColor = 'var(--border)';
+                      (e.currentTarget as HTMLButtonElement).style.background = 'var(--card)';
                     }
                   }}
                 >
@@ -262,13 +260,13 @@ export default function SignInPage() {
                     <div style={{
                       fontSize: 14,
                       fontWeight: 600,
-                      color: '#17192D',
+                      color: var(--foreground),
                     }}>
                       {label}
                     </div>
                     <div style={{
                       fontSize: 12,
-                      color: '#8E93AD',
+                      color: 'var(--text-muted)',
                       marginTop: 1,
                     }}>
                       {desc}
@@ -277,7 +275,7 @@ export default function SignInPage() {
                   {loading === role ? (
                     <div className="spinner" style={{ width: 18, height: 18 }} />
                   ) : (
-                    <ChevronRight size={18} color="#8E93AD" />
+                    <ChevronRight size={18} color="var(--text-muted)" />
                   )}
                 </button>
               ))}
@@ -286,7 +284,7 @@ export default function SignInPage() {
             <button
               className="g-btn g-btn-ghost g-btn-block g-btn-sm"
               onClick={() => setShowDemo(false)}
-              style={{ marginTop: 14 }}
+              style={{ marginTop: 14, width: '100%' }}
             >
               ← Back to sign in
             </button>
@@ -298,7 +296,7 @@ export default function SignInPage() {
       <p style={{
         marginTop: 20,
         fontSize: 12,
-        color: '#8E93AD',
+        color: 'var(--text-muted)',
         textAlign: 'center',
       }}>
         Gatik Events · Hackathon MVP

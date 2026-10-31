@@ -76,7 +76,7 @@ export function CreateTicketModal({ onClose, onSubmit, creatorRole }: CreateTick
           alignItems: 'center',
           justifyContent: 'space-between',
           paddingBottom: 16,
-          borderBottom: '1px solid #ECEEF4',
+          borderBottom: '1px solid var(--border)',
           marginBottom: 16,
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -84,18 +84,18 @@ export function CreateTicketModal({ onClose, onSubmit, creatorRole }: CreateTick
               width: 32,
               height: 32,
               borderRadius: 8,
-              background: '#3155F518',
+              background: 'var(--primary)18',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
             }}>
-              <PlusCircle size={18} color="#3155F5" />
+              <PlusCircle size={18} color="var(--primary)" />
             </div>
             <div>
-              <h2 style={{ fontSize: 18, fontWeight: 700, color: '#17192D', margin: 0 }}>
+              <h2 style={{ fontSize: 18, fontWeight: 700, color: var(--foreground), margin: 0 }}>
                 Raise a Ticket
               </h2>
-              <p style={{ fontSize: 12, color: '#8E93AD', margin: 0 }}>
+              <p style={{ fontSize: 12, color: '#6B7280', margin: 0 }}>
                 Get help or submit an operational request
               </p>
             </div>
@@ -104,7 +104,7 @@ export function CreateTicketModal({ onClose, onSubmit, creatorRole }: CreateTick
             type="button"
             onClick={onClose}
             className="g-btn g-btn-ghost g-btn-sm"
-            style={{ padding: 6, color: '#8E93AD' }}
+            style={{ padding: 6, color: 'var(--text-muted)' }}
             aria-label="Close modal"
           >
             <X size={20} />
@@ -116,7 +116,7 @@ export function CreateTicketModal({ onClose, onSubmit, creatorRole }: CreateTick
           {/* Category */}
           <div style={{ marginBottom: 14 }}>
             <label className="g-label" htmlFor="ticket-category">
-              Category <span style={{ color: '#FF6748' }}>*</span>
+              Category <span style={{ color: '#F9C7B1' }}>*</span>
             </label>
             <select
               id="ticket-category"
@@ -129,7 +129,7 @@ export function CreateTicketModal({ onClose, onSubmit, creatorRole }: CreateTick
                 }
               }}
               style={{
-                borderColor: errors.category ? '#FF6748' : undefined,
+                borderColor: errors.category ? '#F9C7B1' : undefined,
               }}
             >
               {availableCategories.map((cat) => (
@@ -139,7 +139,7 @@ export function CreateTicketModal({ onClose, onSubmit, creatorRole }: CreateTick
               ))}
             </select>
             {errors.category && (
-              <span style={{ color: '#FF6748', fontSize: 12, marginTop: 4, display: 'block' }}>
+              <span style={{ color: '#F9C7B1', fontSize: 12, marginTop: 4, display: 'block' }}>
                 {errors.category}
               </span>
             )}
@@ -148,7 +148,7 @@ export function CreateTicketModal({ onClose, onSubmit, creatorRole }: CreateTick
           {/* Subject */}
           <div style={{ marginBottom: 14 }}>
             <label className="g-label" htmlFor="ticket-subject">
-              Subject <span style={{ color: '#FF6748' }}>*</span>
+              Subject <span style={{ color: '#F9C7B1' }}>*</span>
             </label>
             <input
               id="ticket-subject"
@@ -163,11 +163,11 @@ export function CreateTicketModal({ onClose, onSubmit, creatorRole }: CreateTick
                 }
               }}
               style={{
-                borderColor: errors.subject ? '#FF6748' : undefined,
+                borderColor: errors.subject ? '#F9C7B1' : undefined,
               }}
             />
             {errors.subject && (
-              <span style={{ color: '#FF6748', fontSize: 12, marginTop: 4, display: 'block' }}>
+              <span style={{ color: '#F9C7B1', fontSize: 12, marginTop: 4, display: 'block' }}>
                 {errors.subject}
               </span>
             )}
@@ -176,7 +176,7 @@ export function CreateTicketModal({ onClose, onSubmit, creatorRole }: CreateTick
           {/* Description */}
           <div style={{ marginBottom: 20 }}>
             <label className="g-label" htmlFor="ticket-description">
-              Description <span style={{ color: '#FF6748' }}>*</span>
+              Description <span style={{ color: '#F9C7B1' }}>*</span>
             </label>
             <textarea
               id="ticket-description"
@@ -192,11 +192,11 @@ export function CreateTicketModal({ onClose, onSubmit, creatorRole }: CreateTick
               }}
               style={{
                 minHeight: 100,
-                borderColor: errors.description ? '#FF6748' : undefined,
+                borderColor: errors.description ? '#F9C7B1' : undefined,
               }}
             />
             {errors.description && (
-              <span style={{ color: '#FF6748', fontSize: 12, marginTop: 4, display: 'block' }}>
+              <span style={{ color: '#F9C7B1', fontSize: 12, marginTop: 4, display: 'block' }}>
                 {errors.description}
               </span>
             )}

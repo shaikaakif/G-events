@@ -302,14 +302,14 @@ ON CONFLICT (id) DO NOTHING;
 
 -- Event Members
 INSERT INTO event_members (id, event_id, user_id, role, display_name, responsibilities, is_demo) VALUES
-  ('m1m2m3m4-0001-4000-8000-000000000001', 'e1e2e3e4-0001-4000-8000-000000000001', 'a1b2c3d4-0001-4000-8000-000000000001', 'participant',  'Aarav Sharma',    NULL, true),
-  ('m1m2m3m4-0002-4000-8000-000000000002', 'e1e2e3e4-0001-4000-8000-000000000001', 'a1b2c3d4-0002-4000-8000-000000000002', 'volunteer',    'Priya Patel',     'Technical support desk, helping participants with setup and tooling issues', true),
-  ('m1m2m3m4-0003-4000-8000-000000000003', 'e1e2e3e4-0001-4000-8000-000000000001', 'a1b2c3d4-0003-4000-8000-000000000003', 'coordinator',  'Rahul Verma',     'Overall event coordination, volunteer management, logistics', true),
-  ('m1m2m3m4-0004-4000-8000-000000000004', 'e1e2e3e4-0001-4000-8000-000000000001', 'a1b2c3d4-0004-4000-8000-000000000004', 'principal',    'Dr. Sunita Iyer', 'Event administrator and principal oversight', true),
+  ('a1b2c3d4-0001-4000-8000-000000000001', 'e1e2e3e4-0001-4000-8000-000000000001', 'a1b2c3d4-0001-4000-8000-000000000001', 'participant',  'Aarav Sharma',    NULL, true),
+  ('a1b2c3d4-0002-4000-8000-000000000002', 'e1e2e3e4-0001-4000-8000-000000000001', 'a1b2c3d4-0002-4000-8000-000000000002', 'volunteer',    'Priya Patel',     'Technical support desk, helping participants with setup and tooling issues', true),
+  ('a1b2c3d4-0003-4000-8000-000000000003', 'e1e2e3e4-0001-4000-8000-000000000001', 'a1b2c3d4-0003-4000-8000-000000000003', 'coordinator',  'Rahul Verma',     'Overall event coordination, volunteer management, logistics', true),
+  ('a1b2c3d4-0004-4000-8000-000000000004', 'e1e2e3e4-0001-4000-8000-000000000001', 'a1b2c3d4-0004-4000-8000-000000000004', 'principal',    'Dr. Sunita Iyer', 'Event administrator and principal oversight', true),
   -- Additional participants
-  ('m1m2m3m4-0005-4000-8000-000000000005', 'e1e2e3e4-0001-4000-8000-000000000001', 'a1b2c3d4-0005-4000-8000-000000000005', 'participant',  'Meera Joshi',     NULL, true),
-  ('m1m2m3m4-0006-4000-8000-000000000006', 'e1e2e3e4-0001-4000-8000-000000000001', 'a1b2c3d4-0006-4000-8000-000000000006', 'participant',  'Karan Singh',     NULL, true),
-  ('m1m2m3m4-0007-4000-8000-000000000007', 'e1e2e3e4-0001-4000-8000-000000000001', 'a1b2c3d4-0007-4000-8000-000000000007', 'participant',  'Ananya Gupta',    NULL, true)
+  ('a1b2c3d4-0005-4000-8000-000000000005', 'e1e2e3e4-0001-4000-8000-000000000001', 'a1b2c3d4-0005-4000-8000-000000000005', 'participant',  'Meera Joshi',     NULL, true),
+  ('a1b2c3d4-0006-4000-8000-000000000006', 'e1e2e3e4-0001-4000-8000-000000000001', 'a1b2c3d4-0006-4000-8000-000000000006', 'participant',  'Karan Singh',     NULL, true),
+  ('a1b2c3d4-0007-4000-8000-000000000007', 'e1e2e3e4-0001-4000-8000-000000000001', 'a1b2c3d4-0007-4000-8000-000000000007', 'participant',  'Ananya Gupta',    NULL, true)
 ON CONFLICT (id) DO NOTHING;
 
 -- Event Schedule — Day 1: 31 October
@@ -349,7 +349,7 @@ ON CONFLICT DO NOTHING;
 -- Demo Tickets (to show the workflow)
 INSERT INTO tickets (id, event_id, created_by, creator_role, category, subject, description, assigned_to, assigned_role, status, resolution_note) VALUES
   (
-    't1t2t3t4-0001-4000-8000-000000000001',
+    'a1b2c3d4-0001-4000-8000-0000000000010001-4000-8000-000000000001',
     'e1e2e3e4-0001-4000-8000-000000000001',
     'a1b2c3d4-0001-4000-8000-000000000001',
     'participant',
@@ -362,7 +362,7 @@ INSERT INTO tickets (id, event_id, created_by, creator_role, category, subject, 
     NULL
   ),
   (
-    't1t2t3t4-0002-4000-8000-000000000002',
+    'a1b2c3d4-0001-4000-8000-0000000000010002-4000-8000-000000000002',
     'e1e2e3e4-0001-4000-8000-000000000001',
     'a1b2c3d4-0002-4000-8000-000000000002',
     'volunteer',
@@ -375,7 +375,7 @@ INSERT INTO tickets (id, event_id, created_by, creator_role, category, subject, 
     NULL
   ),
   (
-    't1t2t3t4-0003-4000-8000-000000000003',
+    'a1b2c3d4-0001-4000-8000-0000000000010003-4000-8000-000000000003',
     'e1e2e3e4-0001-4000-8000-000000000001',
     'a1b2c3d4-0003-4000-8000-000000000003',
     'coordinator',
@@ -388,7 +388,7 @@ INSERT INTO tickets (id, event_id, created_by, creator_role, category, subject, 
     NULL
   ),
   (
-    't1t2t3t4-0004-4000-8000-000000000004',
+    'a1b2c3d4-0001-4000-8000-0000000000010004-4000-8000-000000000004',
     'e1e2e3e4-0001-4000-8000-000000000001',
     'a1b2c3d4-0005-4000-8000-000000000005',
     'participant',
@@ -404,13 +404,13 @@ ON CONFLICT (id) DO NOTHING;
 
 -- Demo Ticket Updates (audit trail)
 INSERT INTO ticket_updates (ticket_id, actor_id, old_status, new_status, note) VALUES
-  ('t1t2t3t4-0001-4000-8000-000000000001', 'a1b2c3d4-0002-4000-8000-000000000002', 'Open', 'Acknowledged', 'I will come to your desk to help.'),
-  ('t1t2t3t4-0001-4000-8000-000000000001', 'a1b2c3d4-0002-4000-8000-000000000002', 'Acknowledged', 'In Progress', 'Working on fixing the npm permissions issue.'),
-  ('t1t2t3t4-0002-4000-8000-000000000002', 'a1b2c3d4-0003-4000-8000-000000000003', 'Open', 'Acknowledged', 'Noted. Will check volunteer availability.'),
-  ('t1t2t3t4-0003-4000-8000-000000000003', 'a1b2c3d4-0003-4000-8000-000000000003', 'Open', 'Escalated', 'Escalating to principal for resource procurement approval.'),
-  ('t1t2t3t4-0004-4000-8000-000000000004', 'a1b2c3d4-0002-4000-8000-000000000002', 'Open', 'Acknowledged', 'Checking with IT support.'),
-  ('t1t2t3t4-0004-4000-8000-000000000004', 'a1b2c3d4-0002-4000-8000-000000000002', 'Acknowledged', 'In Progress', 'IT team is resetting the access point.'),
-  ('t1t2t3t4-0004-4000-8000-000000000004', 'a1b2c3d4-0002-4000-8000-000000000002', 'In Progress', 'Resolved', 'IT team has reset the access point. Connectivity restored.')
+  ('a1b2c3d4-0001-4000-8000-0000000000010001-4000-8000-000000000001', 'a1b2c3d4-0002-4000-8000-000000000002', 'Open', 'Acknowledged', 'I will come to your desk to help.'),
+  ('a1b2c3d4-0001-4000-8000-0000000000010001-4000-8000-000000000001', 'a1b2c3d4-0002-4000-8000-000000000002', 'Acknowledged', 'In Progress', 'Working on fixing the npm permissions issue.'),
+  ('a1b2c3d4-0001-4000-8000-0000000000010002-4000-8000-000000000002', 'a1b2c3d4-0003-4000-8000-000000000003', 'Open', 'Acknowledged', 'Noted. Will check volunteer availability.'),
+  ('a1b2c3d4-0001-4000-8000-0000000000010003-4000-8000-000000000003', 'a1b2c3d4-0003-4000-8000-000000000003', 'Open', 'Escalated', 'Escalating to principal for resource procurement approval.'),
+  ('a1b2c3d4-0001-4000-8000-0000000000010004-4000-8000-000000000004', 'a1b2c3d4-0002-4000-8000-000000000002', 'Open', 'Acknowledged', 'Checking with IT support.'),
+  ('a1b2c3d4-0001-4000-8000-0000000000010004-4000-8000-000000000004', 'a1b2c3d4-0002-4000-8000-000000000002', 'Acknowledged', 'In Progress', 'IT team is resetting the access point.'),
+  ('a1b2c3d4-0001-4000-8000-0000000000010004-4000-8000-000000000004', 'a1b2c3d4-0002-4000-8000-000000000002', 'In Progress', 'Resolved', 'IT team has reset the access point. Connectivity restored.')
 ON CONFLICT DO NOTHING;
 
 -- =============================================================================
